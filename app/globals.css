@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 243, 244, 246;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+/* Optional: Add some basic styles for better UX */
+button {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+button:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+/* Add smooth scrolling for leaderboard updates */
+.animate-scroll {
+  @apply transition-transform duration-300 ease-out;
+}
+
+/* Optional: Add loading spinner animation */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+  @apply animate-spin h-8 w-8 border-4 border-blue-500 border-t-transparent rounded-full;
+}
